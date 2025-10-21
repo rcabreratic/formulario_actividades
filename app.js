@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
      * ¡¡¡IMPORTANTE!!!
      * Pega aquí la URL de tu Google Apps Script que obtuviste en la Fase 1.
      */
-    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbydYjJS_MVsrQ6ze7FbLBAT0a5Kv3BqU6au4oRbEB8vAKB9tPLmK3W_T21-Yhi7gwN_/exec";
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzxc5G0lcJV0RahD75KIR6pc1gASy4iGv-vvkVx259fxJ_v28fWyeUzygrYVdTFMdet/exec";
 
 
     // Listas de datos que hemos definido
@@ -361,3 +361,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 });
+
