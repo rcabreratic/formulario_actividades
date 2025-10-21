@@ -318,9 +318,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const response = await fetch(SCRIPT_URL, {
                 method: 'POST',
                 mode: 'cors', // Necesario para peticiones cross-origin
-                headers: {
-                    'Content-Type': 'application/json',
-                },
+                // NO AÑADIMOS CABECERA 'Content-Type'. 
+                // fetch() usará 'text/plain' por defecto.
                 body: JSON.stringify(payload)
             });
 
@@ -359,5 +358,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Inicia la aplicación ---
     init();
+
 
 });
