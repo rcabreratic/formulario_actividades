@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-g">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Actividades Extraescolares</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
+</head>
+<body>
+
+    <header class="header">
+        <h1>Registro de Actividades Extraescolares</h1>
+        <p>Formulario para Jefes de Departamento</p>
+    </header>
+
+    <main>
+        <form id="activityForm" novalidate>
+            
+            <fieldset class="form-section">
+                <legend>1. Datos del Departamento</legend>
+                <div class="form-group">
+                    <label for="departamento">Departamento</label>
+                    <select id="departamento" name="departamento" required></select>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email del Jefe/a de Departamento</label>
+                    <input type="email" id="email" name="email" required placeholder="tu.email@instituto.es">
+                </div>
+            </fieldset>
+
+            <fieldset class="form-section">
+                <legend>2. Actividades Propuestas</legend>
+                <div id="activities-container">
+                    </div>
+                <button type="button" id="addActivityBtn" class="btn btn-secondary">
+                    &#43; Añadir otra actividad
+                </button>
+            </fieldset>
+
+            <div class="submit-section">
+                <button type="submit" id="submitBtn" class="btn btn-primary">
+                    <span class="btn-text">Enviar todas las actividades</span>
+                    <span class="btn-loader hidden">Enviando...</span>
+                </button>
+                <p id="form-message"></p> </div>
+
+        </form>
+    </main>
+
+    <template id="activity-template">
+        <div class="activity-block">
+            <h4 class="activity-title">Nueva Actividad</h4>
+            <button type="button" class="btn-remove-activity" title="Eliminar esta actividad">&times;</button>
+            
+            <div class="form-group">
+                <label for="nombre">Nombre de la Actividad</label>
+                <input type="text" name="nombre" class="activity-name" required>
+            </div>
+            
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="etapa">Etapa Educativa</label>
+                    <select name="etapa" class="etapa-select" required>
+                        <option value="">Selecciona una etapa...</option>
+                        <option value="ESO">Educación Secundaria Obligatoria (ESO)</option>
+                        <option value="Bachillerato">Bachillerato</option>
+                        <option value="FP">Formación Profesional (Ciclos)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="trimestre">Trimestre</label>
+                    <select name="trimestre" required>
+                        <option value="">Selecciona un trimestre...</option>
+                        <option value="1er Trimestre">1er Trimestre</option>
+                        <option value="2º Trimestre">2º Trimestre</option>
+                        <option value="3er Trimestre">3er Trimestre</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group niveles-container hidden">
+                <label>Niveles Participantes</label>
+                <div class="checkbox-group">
+                    </div>
+            </div>
+
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="tipoDuracion">Duración de la Actividad</Vlabel>
+                    <select name="tipoDuracion" class="tipoDuracion-select" required>
+                        <option value="">Selecciona la duración...</option>
+                        <option value="Una sola jornada">Una sola jornada</option>
+                        <option value="Múltiples jornadas">Múltiples jornadas</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="pernocta">Pernocta</label>
+                    <select name="pernocta" required>
+                        <option value="">¿Hay pernocta?</option>
+                        <option value="No">No</option>
+                        <option value="Sí">Sí</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="fechas-container">
+                <div class="form-group fecha-unica-container hidden">
+                    <label for="fechaUnica">Fecha de la actividad</label>
+                    <input type="date" name="fechaUnica">
+                </div>
+                <div class="fechas-multiples-container hidden">
+                    <div class="form-group">
+                        <label for="fechaInicio">Fecha de inicio</label>
+                        <input type="date" name="fechaInicio">
+                    </div>
+                    <div class="form-group">
+                        <label for="fechaFin">Fecha de fin</label>
+                        <input type="date" name="fechaFin">
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="tipoHorario">Horario de la Actividad</label>
+                <select name="tipoHorario" class="tipoHorario-select" required>
+                    <option value="">Selecciona el horario...</option>
+                    <option value="Durante el horario lectivo">Durante el horario lectivo</option>
+                    <option value="Fuera del horario lectivo">Fuera del horario lectivo</option>
+                </select>
+            </div>
+
+            <div class="form-group implicacion-container hidden">
+                <label for="implicacionLectiva">Implicación sobre las clases</label>
+                <select name="implicacionLectiva">
+                    <option value="">Selecciona la implicación...</option>
+                    <option value="Se limita a la/s hora/s de clase del profesor/materia">Se limita a la/s hora/s de clase del profesor/materia</option>
+                    <option value="Afecta a más horas de clase">Afecta a más horas de clase</option>
+                </select>
+            </div>
+            
+        </div>
+    </template>
+
+</body>
+</html>

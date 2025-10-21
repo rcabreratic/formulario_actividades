@@ -1,0 +1,223 @@
+/* Configuración global y variables */
+:root {
+    --color-primario: #005a9c; /* Azul corporativo (puedes cambiarlo) */
+    --color-secundario: #f4f4f4;
+    --color-borde: #ccc;
+    --color-texto: #333;
+    --color-fondo: #fff;
+    --color-error: #d93025;
+    --color-exito: #1e8e3e;
+    --sombra: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--color-secundario);
+    color: var(--color-texto);
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Encabezado */
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid var(--color-primario);
+}
+.header h1 {
+    color: var(--color-primario);
+    margin: 0;
+}
+.header p {
+    font-size: 1.1rem;
+    margin: 5px 0 0;
+}
+.logo {
+    max-width: 150px;
+    margin-bottom: 15px;
+}
+
+/* Formulario principal */
+main {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: var(--color-fondo);
+    padding: 20px 30px;
+    border-radius: 8px;
+    box-shadow: var(--sombra);
+}
+
+.form-section {
+    border: 1px solid var(--color-borde);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 25px;
+}
+.form-section legend {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--color-primario);
+    padding: 0 10px;
+}
+
+/* Grupos de campos */
+.form-group {
+    margin-bottom: 15px;
+}
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+input[type="text"],
+input[type="email"],
+input[type="date"],
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--color-borde);
+    border-radius: 5px;
+    box-sizing: border-box; /* Para que el padding no afecte al width */
+    font-size: 1rem;
+}
+
+/* Rejilla para campos uno al lado del otro */
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+/* Bloque de Actividad */
+.activity-block {
+    border: 1px solid #ddd;
+    background-color: #fafafa;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 20px;
+    position: relative;
+}
+.activity-title {
+    margin-top: 0;
+    color: #555;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+}
+.btn-remove-activity {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    color: #aaa;
+    cursor: pointer;
+    line-height: 1;
+}
+.btn-remove-activity:hover {
+    color: var(--color-error);
+}
+
+/* Checkboxes de niveles */
+.checkbox-group {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+    background-color: #fff;
+    border: 1px solid var(--color-borde);
+    padding: 15px;
+    border-radius: 5px;
+}
+.checkbox-item {
+    display: flex;
+    align-items: center;
+}
+.checkbox-item input {
+    width: auto;
+    margin-right: 8px;
+}
+.checkbox-item label {
+    margin-bottom: 0;
+    font-weight: 500;
+}
+
+/* Botones */
+.btn {
+    padding: 12px 20px;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+.btn-primary {
+    background-color: var(--color-primario);
+    color: white;
+}
+.btn-primary:hover {
+    background-color: #004a80;
+}
+.btn-secondary {
+    background-color: #e0e0e0;
+    color: #333;
+}
+.btn-secondary:hover {
+    background-color: #d0d0d0;
+}
+.submit-section {
+    text-align: center;
+}
+
+/* Clases de utilidad */
+.hidden {
+    display: none !important;
+}
+.form-message {
+    margin-top: 15px;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+.form-message.success {
+    color: var(--color-exito);
+}
+.form-message.error {
+    color: var(--color-error);
+}
+
+/* Loader del botón de envío */
+.btn-loader {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255,255,255,0.3);
+    border-radius: 50%;
+    border-top-color: #fff;
+    animation: spin 1s ease-in-out infinite;
+    vertical-align: middle;
+    margin-left: 10px;
+}
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Validación de errores */
+input:invalid,
+select:invalid {
+    border-color: var(--color-error);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+    body {
+        padding: 10px;
+    }
+    main {
+        padding: 15px;
+    }
+}
