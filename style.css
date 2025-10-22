@@ -16,14 +16,14 @@ body {
     color: var(--color-texto);
     line-height: 1.6;
     margin: 0;
-    padding: 20px;
+    padding: 0 20px 20px 20px; /* <-- CAMBIO AQUÍ: Eliminado el padding superior */
 }
 
 /* Encabezado MODIFICADO */
 .header {
     text-align: center;
     margin-bottom: 20px;
-    width: 1200px; /* <-- CAMBIO AQUÍ: Ancho fijo */
+    width: 1200px; /* Ancho fijo */
     margin-left: auto;
     margin-right: auto;
 }
@@ -32,17 +32,19 @@ body {
     height: auto; /* Mantiene la proporción */
     border-radius: 8px; /* Bordes redondeados */
     box-shadow: var(--sombra);
+    display: block; /* Soluciona pequeños espacios residuales debajo de la imagen */
 }
 
 
 /* Formulario principal */
 main {
-    width: 1200px; /* <-- CAMBIO AQUÍ: Ancho fijo */
+    width: 1200px; /* Ancho fijo */
     margin: 0 auto;
     background-color: var(--color-fondo);
     padding: 20px 30px;
     border-radius: 8px;
     box-shadow: var(--sombra);
+    box-sizing: border-box; /* <-- CAMBIO AQUÍ: El padding se incluye en el ancho */
 }
 
 /* Bloque de Instrucciones AÑADIDO */
@@ -228,7 +230,7 @@ select:invalid {
 }
 
 /* Responsive */
-@media (max-width: 1200px) {
+@media (max-width: 1240px) { /* Ajustado a 1200px + padding lateral */
     /* Si la pantalla es más pequeña que 1200px, el formulario
        se desbordará. Hacemos que el body sea 'auto' para
        que aparezca la barra de scroll horizontal */
