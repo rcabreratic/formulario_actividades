@@ -315,29 +315,39 @@ document.addEventListener('DOMContentLoaded', () => {
         try {
             const payload = buildJSONPayload();
             
-            const response = await fetch(SCRIPT_URL, {
-                method: 'POST',
-                mode: 'cors', // Necesario para peticiones cross-origin
-                // NO AÑADIMOS CABECERA 'Content-Type'. 
-                // fetch() usará 'text/plain' por defecto.
-                body: JSON.stringify(payload)
-            });
+// --- reemplaza desde aquí ---
+const res = await fetch(SCRIPT_URL, {
+  method: 'POST',
+  mode: 'cors',
+  // no añadas Content-Type; evita preflight
+  body: JSON.stringify(payload)
+});
 
-            const result = await response.json();
+if (!res.ok) {
+  // Por ejemplo 403/404/500
+  throw new Error(`HTTP ${res.status}`);
+}
 
-            if (result.status === "ok") {
-                // Éxito
-                formMessage.textContent = "¡Actividades enviadas con éxito!";
-                formMessage.classList.add('success');
-                form.reset(); // Limpia el formulario
-                // Recarga los departamentos y añade el primer bloque de actividad
-                initDepartamentos();
-                activitiesContainer.innerHTML = '';
-                addActivityBlock();
-            } else {
-                // Error devuelto por el script
-                throw new Error(result.message || 'Error desconocido del servidor.');
-            }
+let result;
+try {
+  result = await res.json();
+} catch {
+  throw new Error('Respuesta no JSON del servidor');
+}
+
+if (result.status === 'ok') {
+  // Éxito (igual que ya tenías)
+  formMessage.textContent = '¡Actividades enviadas con éxito!';
+  formMessage.classList.add('success');
+  form.reset();
+  initDepartamentos();
+  activitiesContainer.innerHTML = '';
+  addActivityBlock();
+} else {
+  // Error lógico devuelto por el servidor
+  throw new Error(result.message || 'Error desconocido del servidor');
+}
+// --- hasta aquí ---
 
         } catch (error) {
             // Error de red o en el 'catch' del script
@@ -361,4 +371,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 });
+
 
