@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Listas de datos que hemos definido
     const DEPARTAMENTOS = [
-        "Biología y Geología", "Dibujo", "Economía y FOL", "Educación Física",
+        "Actividades Extraescolares", "Biología y Geología", "Coord. Erasmus+", "Coord. Bilingüe", "Escuela Espacio de Paz", "Dibujo", "Economía y FOL", "Educación Física",
         "Energía y Agua", "Filosofía", "Física y Química", "Francés",
         "Geografía e Historia", "Informática", "Inglés", "Jefatura de Estudios",
         "Latín y Griego", "Lengua Castellana y Literatura", "Matemáticas",
@@ -371,6 +371,7 @@ if (result.status === 'ok') {
 
 
 });
+
 
 
 
