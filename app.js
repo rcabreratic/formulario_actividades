@@ -287,7 +287,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 fechaFin: block.querySelector('input[name="fechaFin"]').value,
                 pernocta: block.querySelector('select[name="pernocta"]').value,
                 tipoHorario: block.querySelector('select[name="tipoHorario"]').value,
-                implicacionLectiva: block.querySelector('select[name="implicacionLectiva"]').value
+                implicacionLectiva: block.querySelector('select[name="implicacionLectiva"]').value,
+                alumnosAsisten: block.querySelector('select[name="alumnosAsisten"]').value
             };
             payload.actividades.push(actividad);
         });
@@ -371,6 +372,7 @@ if (result.status === 'ok') {
 
 
 });
+
 
 
 
