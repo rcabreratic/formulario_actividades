@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Listas de datos que hemos definido
     const DEPARTAMENTOS = [
-        "Actividades Extraescolares", "Biología y Geología", "Coord. Erasmus+", "Coord. Bilingüe", "Escuela Espacio de Paz", "Dibujo", "Economía y FOL", "Educación Física",
+        "Actividades Extraescolares", "Biología y Geología", "Coord. Erasmus+", "Coord. Bilingüe", "Coor. Plan de Igualdad", "Escuela Espacio de Paz", "Dibujo", "Economía y FOL", "Educación Física",
         "Energía y Agua", "Escuela Espacio de Paz", "Filosofía", "Física y Química", "Francés",
         "Geografía e Historia", "Informática", "Inglés", "Jefatura de Estudios",
         "Latín y Griego", "Lengua Castellana y Literatura", "Matemáticas",
@@ -27,7 +27,8 @@ document.addEventListener('DOMContentLoaded', () => {
             "1º SMR (Sistemas Microinformáticos y Redes)", "2º SMR (Sistemas Microinformáticos y Redes)",
             "1º ASIR (Admón. de Sistemas Informáticos en Red)", "2º ASIR (Admón. de Sistemas Informáticos en Red)",
             "1º DAW (Desarrollo de Aplicaciones Web)", "2º DAW (Desarrollo de Aplicaciones Web)",
-            "1º ER (Energías Renovables)", "2º ER (Energías Renovables)"
+            "1º RETA (Redes y Estaciones de Tratamiento de Agua)", "2º RETA (Redes y Estaciones de Tratamiento de Agua)",
+            "1º EEEST (Eficiencia Energética y Energía Solar Térmica)", "2º EEEST (Eficiencia Energética y Energía Solar Térmica)"
         ]
     };
 
@@ -372,6 +373,7 @@ if (result.status === 'ok') {
 
 
 });
+
 
 
 
